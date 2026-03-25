@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/assets/fonts/PlayfairDisplay.woff2") format("woff2");
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 200 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    /* Dark luxury theme - always dark */
+    --background: 0.08 0 0;
+    --foreground: 0.93 0 0;
+    --card: 0.13 0 0;
+    --card-foreground: 0.93 0 0;
+    --popover: 0.13 0 0;
+    --popover-foreground: 0.93 0 0;
+    /* Gold primary */
+    --primary: 0.72 0.12 72;
+    --primary-foreground: 0.11 0 0;
+    --secondary: 0.16 0 0;
+    --secondary-foreground: 0.93 0 0;
+    --muted: 0.13 0 0;
+    --muted-foreground: 0.63 0 0;
+    /* Gold accent */
+    --accent: 0.72 0.12 72;
+    --accent-foreground: 0.11 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    /* Gold-brown border */
+    --border: 0.23 0.04 72;
+    --input: 0.2 0.03 72;
+    --ring: 0.72 0.12 72;
+    --gold: 0.72 0.12 72;
+    --gold-light: 0.82 0.1 75;
+    --gold-dark: 0.58 0.1 72;
+    --chart-1: 0.72 0.12 72;
+    --chart-2: 0.65 0.1 165;
+    --chart-3: 0.55 0.15 250;
+    --chart-4: 0.78 0.14 40;
+    --chart-5: 0.5 0.12 320;
+    --sidebar: 0.1 0 0;
+    --sidebar-foreground: 0.93 0 0;
+    --sidebar-primary: 0.72 0.12 72;
+    --sidebar-primary-foreground: 0.11 0 0;
+    --sidebar-accent: 0.16 0 0;
+    --sidebar-accent-foreground: 0.93 0 0;
+    --sidebar-border: 0.23 0.04 72;
+    --sidebar-ring: 0.72 0.12 72;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "General Sans", system-ui, sans-serif;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: oklch(var(--gold));
+  }
+
+  .bg-gold {
+    background-color: oklch(var(--gold));
+  }
+
+  .border-gold {
+    border-color: oklch(var(--gold));
+  }
+
+  .font-display {
+    font-family: "Playfair Display", serif;
+  }
+
+  .tracking-luxury {
+    letter-spacing: 0.15em;
+  }
+
+  .tracking-wide-luxury {
+    letter-spacing: 0.25em;
+  }
+}
